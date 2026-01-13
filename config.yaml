@@ -1,0 +1,89 @@
+name: AP EcoFlow MQTT DNS Redirect
+version: "0.0.1"
+slug: hassio-ap-ecoflow
+description: Create Access point to connect EcoFlow devices and redirect MQTT server address to Host AP
+url: https://github.com/RGarrett93/HASSIO-AP-EcoFlow-DNS-Redirect
+startup: system
+boot: auto
+init: false
+
+host_network: true
+apparmor: false
+host_dbus: true
+full_access: true
+
+privileged:
+  - NET_ADMIN
+  - SYS_ADMIN
+  - SYS_RAWIO
+  - SYS_TIME
+  - SYS_NICE
+
+devices:
+  - /dev/mem
+
+map:
+  - config:rw
+  - ssl:rw
+
+options:
+  ssid: EcoFlowAP
+  wpa_passphrase: ""
+  channel: 6
+  address: 192.168.2.1
+  netmask: 255.255.255.0
+  broadcast: 192.168.2.254
+  interface: wlan0
+  internet_interface: eth0
+  # EcoFlow redirect / DNS override
+  redirect_mqtt_host: mqtt-e.ecoflow.com
+  redirect_target_ip: ""
+  redirect_target_port: 8883
+  dns_override_enabled: true
+  allow_internet: false
+  dhcp_enable: true
+  dhcp_start: 192.168.2.100
+  dhcp_end: 192.168.2.200
+  dhcp_dns: 1.1.1.1
+  dhcp_subnet: 255.255.255.0
+  dhcp_router: 192.168.2.1
+  hide_ssid: false
+  lease_time: 864000
+  static_leases:
+    - mac: "00:11:22:33:44:55"
+      ip: 192.168.2.10
+      name: "AP DNS Redirect"
+
+schema:
+  ssid: str
+  wpa_passphrase: str
+  channel: int
+  address: str
+  netmask: str
+  broadcast: str
+  interface: str
+  internet_interface: str
+  redirect_mqtt_host: str
+  redirect_target_ip: str?
+  redirect_target_port: int
+  dns_override_enabled: bool
+  allow_internet: bool
+  dhcp_enable: bool
+  dhcp_start: str
+  dhcp_end: str
+  dhcp_dns: str
+  dhcp_subnet: str
+  dhcp_router: str
+  hide_ssid: bool
+  lease_time: int
+  static_leases:
+    - mac: str
+      ip: str
+      name: str?
+
+arch:
+  - armhf
+  - armv7
+  - aarch64
+  - amd64
+  - i386
