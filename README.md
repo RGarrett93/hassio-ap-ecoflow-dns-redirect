@@ -47,7 +47,7 @@ EcoFlow devices connect to your Home Assistant hotspot:
 1. Home Assistant → **Settings** → **Add-ons** → **Add-on Store**
 2. (⋮) menu → **Repositories**
 3. Add this repository URL:
-   - `https://github.com/RGarrett93/HASSIO-AP-EcoFlow-DNS-Redirect`
+   - `https://github.com/RGarrett93/hassio-ap-ecoflow-dns-redirect`
 
 ### Install the add-on
 - Find **AP EcoFlow MQTT DNS Redirect**
