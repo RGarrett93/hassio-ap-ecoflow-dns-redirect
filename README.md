@@ -54,8 +54,7 @@ EcoFlow devices connect to your Home Assistant hotspot:
 - Install
 - Configure (see below)
 - Start
-
-** Ensure 'Protection Mode' is disabled otherwise the add-on is unable to use WiFi **
+- ** Ensure 'Protection Mode' is disabled otherwise the add-on is unable to use WiFi **
 ---
 
 ## Configuration
