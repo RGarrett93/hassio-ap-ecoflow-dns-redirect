@@ -53,7 +53,8 @@ EcoFlow devices connect to your Home Assistant hotspot:
 - Find **AP EcoFlow MQTT DNS Redirect**
 - Install
 - Configure (see below)
-- Ensure **Protection Mode** is disabled otherwise the add-on is unable to use WiFi
+- Ensure **Protection Mode** is disabled 
+(otherwise the add-on is unable to use WiFi)
 - Start
 
 ---
